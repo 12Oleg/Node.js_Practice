@@ -1,9 +1,8 @@
-const express = require('express');
-
-const routes = require('./routes');
+import express from 'express';
+import routes from './routes';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT: number = parseInt(process.env.PORT || '3000', 10);
 
 app.use(routes);
 
