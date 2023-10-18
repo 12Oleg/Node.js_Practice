@@ -1,10 +1,8 @@
-const express = require('express');
+import express, { Router } from 'express';
 
-const usersData = require('../data/users');
-const { getUsers } = require('../controllers/users');
+import { getUsers } from '../controllers/users';
 
-const router = express.Router();
-
+const usersRouter: Router = express.Router();
 
 /**
  * @swagger
@@ -29,6 +27,6 @@ const router = express.Router();
  *                   name:
  *                     type: string
  */
-router.get('/', getUsers);
+usersRouter.get('/', getUsers);
 
-module.exports = router;
+export default usersRouter;

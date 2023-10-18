@@ -1,14 +1,16 @@
-const options = {
-    definition: {
-      openapi: '3.1.0',
-      info: {
-        title: 'Node.js Express API with Swagger',
-        version: '1.0.0',
+import { Options } from 'swagger-jsdoc';
+
+const options: Options = {
+  definition: {
+    openapi: '3.1.0',
+    info: {
+      title: 'Node.js Express API with Swagger',
+      version: '1.0.0',
+    },
+    servers: [
+      {
+        url: 'http://localhost:3000',
       },
-      servers: [
-        {
-            url: 'http://localhost:3000'
-        }
     ],
     components: {
       responses: {
@@ -21,12 +23,12 @@ const options = {
                 properties: {
                   error: {
                     type: 'string',
-                    example: 'Not Found'
-                  }
-                }
-              }
-            }
-          }
+                    example: 'Not Found',
+                  },
+                },
+              },
+            },
+          },
         },
         InternalServerError: {
           description: 'An internal server error occurred.',
@@ -37,18 +39,17 @@ const options = {
                 properties: {
                   error: {
                     type: 'string',
-                    example: 'Internal Server Error'
-                  }
-                }
-              }
-            }
-          }
+                    example: 'Internal Server Error',
+                  },
+                },
+              },
+            },
+          },
         },
       },
     },
   },
-    apis: ['./src/routes/*.js'],
-  };
-  
-  module.exports = options;
-  
+  apis: ['./src/routes/*.ts'],
+};
+
+export default options;

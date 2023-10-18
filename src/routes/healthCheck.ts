@@ -1,8 +1,8 @@
-const express = require('express');
+import express, { Router } from 'express';
 
-const { healthCheck } = require('../controllers/healthCheck')
+import { healthCheck } from '../controllers/healthCheck';
 
-const router = express.Router();
+const healthCheckRouter: Router = express.Router();
 
 /**
  * @swagger
@@ -28,6 +28,6 @@ const router = express.Router();
  *       500:
  *         $ref: '#/components/responses/InternalServerError'
  */
-router.get('/', healthCheck);
+healthCheckRouter.get('/', healthCheck);
 
-module.exports = router;
+export default healthCheckRouter;
