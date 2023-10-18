@@ -2,7 +2,7 @@
   "name": "node.js_practice",
   "version": "1.0.0",
   "description": "node.js_HW",
-  "main": "server.js",
+  "main": "build/server.js",
   "scripts": {
     "start:dev": "npx nodemon",
     "build": "rimraf ./build && tsc",

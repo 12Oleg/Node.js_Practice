@@ -1,6 +1,6 @@
-import OpenApiOptions from './openApiTypes';
+import { Options } from 'swagger-jsdoc';
 
-const options: OpenApiOptions = {
+const options: Options = {
   definition: {
     openapi: '3.1.0',
     info: {
