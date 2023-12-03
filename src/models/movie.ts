@@ -1,4 +1,6 @@
 import mongoose, { Schema, Document, Types } from 'mongoose';
+
+import { ERRORS } from '../config/constants';
 import { Genre } from './genre';
 
 export interface IMovie extends Document {
@@ -20,7 +22,7 @@ const MovieSchema: Schema = new Schema(
     description: {
       type: String,
       required: [true, 'Description is required'],
-      minlength: [2, 'Description must have at least 7 characters'],
+      minlength: [7, ERRORS.INVALID_DESCRIPTION_LENGTH],
       trim: true,
       cast: false,
     },
@@ -38,7 +40,7 @@ const MovieSchema: Schema = new Schema(
           const genresCount = await Genre.countDocuments({ name: { $in: genreRegex } });
           return genresCount === value.length;
         },
-        message: 'Invalid genres specified',
+        message: ERRORS.INVALID_GENRES,
       },
     },
   },

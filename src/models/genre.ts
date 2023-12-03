@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, Types } from 'mongoose';
+import { ERRORS } from '../config/constants';
 
 export interface IGenre extends Document {
   _id: Types.ObjectId;
@@ -10,7 +11,7 @@ const GenreSchema: Schema = new Schema(
     name: {
       type: String,
       required: [true, 'Name is required'],
-      minlength: [2, 'Name must have at least 2 characters'],
+      minlength: [2, ERRORS.NAME_LENGTH],
       trim: true,
       cast: false,
     },
