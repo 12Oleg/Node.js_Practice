@@ -1,0 +1,9 @@
+{
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageReporters": ["text", "html", "lcov", "clover"],
+    "coverageDirectory": "./coverage",
+    "testMatch": ["<rootDir>/src/**/?(*.)+(spec|test).ts"]
+  }
+  
